@@ -84,6 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google-site-verification", content: "7E2aXlp44Hz81H8V2kq9feSF-NoHBIcj_lJKjC_kQ-s" },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "googlebot", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
       { title: "OHAYO JAPAN 2026 — Japanese Culture Festival" },
