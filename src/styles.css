@@ -1,0 +1,341 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * OHAYO JAPAN 2026 — design system.
+ * Edit the tokens below to retheme the whole site.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-crimson: var(--crimson);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --font-display: "Cinzel", serif;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-jp: "Zen Old Mincho", "Noto Sans JP", serif;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Brand */
+  --crimson: oklch(0.503 0.211 22.5); /* #C8102E */
+  --ink: oklch(0.185 0 0); /* #111111 */
+  --gold: oklch(0.865 0.166 91.5); /* #FFD700 */
+  --cream: oklch(0.958 0.02 92); /* #F7F3E8 */
+
+  --background: oklch(0.155 0.004 285);
+  --foreground: var(--cream);
+  --card: oklch(0.21 0.008 285);
+  --card-foreground: var(--cream);
+  --popover: oklch(0.19 0.008 285);
+  --popover-foreground: var(--cream);
+  --primary: var(--crimson);
+  --primary-foreground: var(--cream);
+  --secondary: oklch(0.26 0.01 285);
+  --secondary-foreground: var(--cream);
+  --muted: oklch(0.26 0.01 285);
+  --muted-foreground: oklch(0.75 0.015 90);
+  --accent: var(--gold);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: var(--cream);
+  --border: oklch(0.98 0.02 92 / 14%);
+  --input: oklch(0.98 0.02 92 / 18%);
+  --ring: var(--gold);
+
+  --gradient-sunrise: linear-gradient(
+    180deg,
+    oklch(0.155 0.004 285) 0%,
+    oklch(0.24 0.06 25) 55%,
+    oklch(0.155 0.004 285) 100%
+  );
+  --gradient-gold: linear-gradient(
+    100deg,
+    color-mix(in oklab, var(--gold) 65%, white),
+    var(--gold) 40%,
+    color-mix(in oklab, var(--crimson) 70%, var(--gold)) 75%,
+    var(--gold)
+  );
+  --shadow-glow: 0 0 40px -8px color-mix(in oklab, var(--gold) 55%, transparent);
+  --shadow-crimson: 0 20px 60px -20px color-mix(in oklab, var(--crimson) 70%, transparent);
+  --glass: color-mix(in oklab, var(--ink) 55%, transparent);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+}
+
+@utility font-jp {
+  font-family: var(--font-jp);
+}
+
+@utility glass {
+  background: var(--glass);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid var(--color-border);
+}
+
+@utility gold-text {
+  background: var(--gradient-gold);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 6s linear infinite;
+}
+
+@utility ink-underline {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 2px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    background: var(--gradient-gold);
+    transition: transform 0.4s ease;
+  }
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@utility lift {
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-glow);
+    border-color: color-mix(in oklab, var(--gold) 55%, transparent);
+  }
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  &[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(var(--drift, 40px), 110vh, 0) rotate(540deg);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--gold) 45%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 42px 6px color-mix(in oklab, var(--gold) 30%, transparent);
+  }
+}
+
+@keyframes fog-drift {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(10%);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes ink-open {
+  0% {
+    clip-path: circle(0% at 50% 55%);
+  }
+  100% {
+    clip-path: circle(150% at 50% 55%);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-90vh) translateX(var(--drift, 20px));
+    opacity: 0;
+  }
+}
+
+@keyframes dragon-soar {
+  0% {
+    transform: scale(0.3) rotate(-180deg);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(1.15) rotate(45deg);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.6) rotate(540deg);
+    opacity: 0;
+  }
+}
+
+@keyframes dragon-stroke {
+  0% {
+    stroke-dasharray: 0 1600;
+  }
+  50% {
+    stroke-dasharray: 800 1600;
+  }
+  100% {
+    stroke-dasharray: 1600 1600;
+  }
+}
+
+@keyframes spark {
+  0%,
+  100% {
+    transform: scale(0.6) translateY(0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.4) translateY(-20px);
+    opacity: 1;
+  }
+}
+
+/* Dragon Roaming across screen & facing camera */
+@keyframes dragon-roam {
+  0% {
+    transform: translate3d(-60vw, 30vh, 0) scale(0.6) rotate(-20deg);
+    opacity: 0;
+  }
+  25% {
+    transform: translate3d(-15vw, -10vh, 0) scale(1.1) rotate(15deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translate3d(20vw, 15vh, 0) scale(1.4) rotate(-10deg);
+    opacity: 1;
+  }
+  70% {
+    transform: translate3d(0, 0, 0) scale(2.6) rotate(0deg);
+    opacity: 1;
+  }
+  88% {
+    transform: translate3d(0, 0, 0) scale(4.8) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(8) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+/* Fire Breathing Inferno Blast Expanding to fill screen */
+@keyframes fire-breathe-burst {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  45% {
+    transform: scale(0.6);
+    opacity: 0.85;
+  }
+  70% {
+    transform: scale(2.8);
+    opacity: 1;
+  }
+  90% {
+    transform: scale(6);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(10);
+    opacity: 0;
+  }
+}
