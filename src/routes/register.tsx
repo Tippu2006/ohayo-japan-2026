@@ -7,14 +7,13 @@ import lanterns from "@/assets/lanterns.jpg";
 export const Route = createFileRoute("/register")({
   head: () => ({
     meta: [
-      { title: "Registration — OHAYO JAPAN 2026" },
+      { title: "Registration — OHAYO JAPAN" },
       {
         name: "description",
-        content:
-          "Register for OHAYO JAPAN 2026: Cosplay, Indo-Japanese Fusion Dance, J-Pop Karaoke, Cultural Workshops, and Stage Activities.",
+        content: "KL University × OHAYO JAPAN",
       },
-      { property: "og:title", content: "Registration — OHAYO JAPAN 2026" },
-      { property: "og:description", content: "Reserve your place at the festival." },
+      { property: "og:title", content: "Registration — OHAYO JAPAN" },
+      { property: "og:description", content: "KL University × OHAYO JAPAN" },
     ],
   }),
   component: RegisterPage,

@@ -21,8 +21,8 @@ export const festival = {
   dates: { en: "STAY TUNED FOR DATES", jp: "日程近日発表 · 乞うご期待" },
   presenter: { en: "KL University proudly presents", jp: "KL大学が誇りを持ってお届けします" },
   collabLine: {
-    en: "OHAYO JAPAN 2026  ×  DEPT. OF FOREIGN LANGUAGES",
-    jp: "OHAYO JAPAN 2026 × 外国語学部",
+    en: "KL University  ×  OHAYO JAPAN",
+    jp: "KL大学 × OHAYO JAPAN",
   },
   subtitle: { en: "Experience Japanese Culture", jp: "日本文化を体験する" },
   tagline: {
@@ -213,7 +213,7 @@ export const faculty: {
     photo: "/faculty/ravi.png",
   },
   {
-    name: "Mrs. Jyotika Sharma",
+    name: "Ms. Jyotika Sharma",
     designation: { en: "Japanese Faculty", jp: "日本語教員" },
     department: { en: "Department of Foreign Languages", jp: "外国語学部" },
     category: "Faculty Mentor",
@@ -248,7 +248,7 @@ export const faculty: {
     photo: "/faculty/vasim.png",
   },
   {
-    name: "Mrs. Neha Pathak",
+    name: "Ms. Neha Pathak",
     designation: { en: "Korean Faculty", jp: "韓国語教員" },
     department: { en: "Department of Foreign Languages", jp: "外国語学部" },
     category: "Faculty Mentor",
@@ -318,7 +318,7 @@ export const team: {
       },
       {
         name: "ANVI SHARMA",
-        role: { en: "Co-Chief Executive", jp: "副最高執行責任者" },
+        role: { en: "Chief Executive Co-Lead", jp: "副最高執行責任者" },
         department: { en: "Student Executive Board", jp: "学生幹部会" },
         photo: "/team/anvi.jpg",
       },
@@ -364,7 +364,7 @@ export const team: {
       },
       {
         name: "Y RAJESH",
-        role: { en: "Co-Photographer", jp: "副写真・撮影担当" },
+        role: { en: "Photographer Co-Lead", jp: "副写真・撮影担当" },
         department: { en: "Media & Documentation", jp: "ドキュメンタリー班" },
         photo: "/team/rajesh.jpg",
       },
@@ -384,7 +384,7 @@ export const team: {
       },
       {
         name: "P AMEEN KHAN",
-        role: { en: "Co-Logistics Lead", jp: "副ロジスティクス責任者" },
+        role: { en: "Logistics Co-Lead", jp: "副ロジスティクス責任者" },
         department: { en: "Logistics Division", jp: "設営・物流部" },
         photo: "/team/ameen_khan.jpg",
       },
@@ -396,7 +396,7 @@ export const team: {
       },
       {
         name: "K SUMANTHIKA",
-        role: { en: "Co-Hospitality Lead", jp: "副接待・おもてなし責任者" },
+        role: { en: "Hospitality Co-Lead", jp: "副接待・おもてなし責任者" },
         department: { en: "Hospitality Cell", jp: "接待部" },
         photo: "/team/sumanthika.jpg",
       },
@@ -408,7 +408,7 @@ export const team: {
       },
       {
         name: "P BAALRAM",
-        role: { en: "Co-Protocol Lead", jp: "副プロトコル責任者" },
+        role: { en: "Protocol Co-Lead", jp: "副プロトコル責任者" },
         department: { en: "Protocol Division", jp: "プロトコル部" },
         photo: "/team/balaram.jpg",
       },

@@ -87,18 +87,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "google-site-verification", content: "7E2aXlp44Hz81H8V2kq9feSF-NoHBIcj_lJKjC_kQ-s" },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "googlebot", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
-      { title: "OHAYO JAPAN 2026 — Japanese Culture Festival" },
+      { title: "OHAYO JAPAN" },
       {
         name: "description",
-        content:
-          "OHAYO JAPAN 2026 — a two-day Japanese cultural festival at KL University, September 16–17, 2026.",
+        content: "KL University × OHAYO JAPAN",
       },
       {
         name: "author",
         content: "KL University · Dept. of Foreign Languages & Dept. of International Relations",
       },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "OHAYO JAPAN" },
+      { property: "og:title", content: "OHAYO JAPAN" },
+      { property: "og:description", content: "KL University × OHAYO JAPAN" },
+      { property: "og:image", content: "https://ohayo-japan-2026.vercel.app/memories/student_delegation_logo.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "OHAYO JAPAN" },
+      { name: "twitter:description", content: "KL University × OHAYO JAPAN" },
+      { name: "twitter:image", content: "https://ohayo-japan-2026.vercel.app/memories/student_delegation_logo.jpg" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -108,8 +114,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Poppins:wght@300;400;500;600&family=Zen+Old+Mincho:wght@400;700&family=Noto+Sans+JP:wght@300;500;700&display=swap",
       },
-      { rel: "icon", href: "/logo.png", type: "image/png" },
-      { rel: "apple-touch-icon", href: "/logo.png" },
+      { rel: "icon", href: "/memories/student_delegation_logo.jpg", type: "image/jpeg" },
+      { rel: "apple-touch-icon", href: "/memories/student_delegation_logo.jpg" },
     ],
   }),
   shellComponent: RootShell,
@@ -123,6 +129,18 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "OHAYO JAPAN",
+              alternateName: ["Ohayo Japan", "OHAYO JAPAN KLU", "Ohayo Japan KLU"],
+              url: "https://ohayo-japan-2026.vercel.app/",
+            }),
+          }}
+        />
       </head>
       <body>
         {children}

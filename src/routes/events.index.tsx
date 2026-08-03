@@ -7,16 +7,15 @@ import cosplay from "@/assets/event-cosplay.jpg";
 export const Route = createFileRoute("/events/")({
   head: () => ({
     meta: [
-      { title: "Events — OHAYO JAPAN 2026" },
+      { title: "Events — OHAYO JAPAN" },
       {
         name: "description",
-        content:
-          "Cosplay, Indo–Japanese dance, karaoke, origami, calligraphy and the cultural exhibition at OHAYO JAPAN 2026.",
+        content: "KL University × OHAYO JAPAN",
       },
-      { property: "og:title", content: "Events — OHAYO JAPAN 2026" },
+      { property: "og:title", content: "Events — OHAYO JAPAN" },
       {
         property: "og:description",
-        content: "Six signature experiences across two festival days.",
+        content: "KL University × OHAYO JAPAN",
       },
     ],
   }),

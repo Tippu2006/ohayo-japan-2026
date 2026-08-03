@@ -15,16 +15,16 @@ import { Maximize2, X } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "OHAYO JAPAN 2026 — Cinematic Japanese Cultural Journey at KL University" },
+      { title: "OHAYO JAPAN" },
       {
         name: "description",
-        content:
-          "Anime, cosplay, language, dance, music, food and traditions. OHAYO JAPAN 2026, September 16–17 at KL University.",
+        content: "KL University × OHAYO JAPAN",
       },
-      { property: "og:title", content: "OHAYO JAPAN 2026 — Japanese Culture Festival" },
+      { property: "og:site_name", content: "OHAYO JAPAN" },
+      { property: "og:title", content: "OHAYO JAPAN" },
       {
         property: "og:description",
-        content: "Two days of Japanese culture at KL University. September 16–17, 2026.",
+        content: "KL University × OHAYO JAPAN",
       },
     ],
   }),

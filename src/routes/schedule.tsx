@@ -8,14 +8,13 @@ import lanterns from "@/assets/lanterns.jpg";
 export const Route = createFileRoute("/schedule")({
   head: () => ({
     meta: [
-      { title: "Schedule — OHAYO JAPAN 2026" },
+      { title: "Schedule — OHAYO JAPAN" },
       {
         name: "description",
-        content:
-          "Day 1 and Day 2 timelines for OHAYO JAPAN 2026, September 16–17 at KL University.",
+        content: "KL University × OHAYO JAPAN",
       },
-      { property: "og:title", content: "Schedule — OHAYO JAPAN 2026" },
-      { property: "og:description", content: "Two days of Japanese culture, hour by hour." },
+      { property: "og:title", content: "Schedule — OHAYO JAPAN" },
+      { property: "og:description", content: "KL University × OHAYO JAPAN" },
     ],
   }),
   component: SchedulePage,

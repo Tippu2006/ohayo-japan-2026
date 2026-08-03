@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ohayo-japan-journey.vercel.app/sitemap.xml
+Sitemap: https://ohayo-japan-2026.vercel.app/sitemap.xml
